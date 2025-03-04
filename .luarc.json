@@ -1,0 +1,22 @@
+{
+    "runtime.pathStrict": true,
+    "workspace.library": [
+        "lua_modules/share/lua/5.4",
+        "lua_modules/lib/lua/5.4"
+    ],
+    "diagnostics.groupSeverity": {
+        "ambiguity": "Error",
+        "await": "Error",
+        "codestyle": "Error",
+        "conventions": "Error",
+        "duplicate": "Error",
+        "global": "Error",
+        "luadoc": "Error",
+        "redefined": "Error",
+        "strict": "Error",
+        "strong": "Error",
+        "type-check": "Error",
+        "unbalanced": "Error",
+        "unused": "Error"
+    }
+}
