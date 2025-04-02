@@ -111,7 +111,6 @@ local colourise = xml_gen.component(function(args)
     end
 end)
 
-local f = assert(io.open("localisation.yml", "r+b"))
 
 local doc = html.html { charset = "utf-8" } {
     html.head {
@@ -166,6 +165,7 @@ local doc = html.html { charset = "utf-8" } {
                     else
                         io.stderr:write("return {\n")
                         local i = 0
+                        local f = assert(io.open("localisation.yml", "r+b"))
                         for k, v in parse_localisation(f) do
                             local lk, lv = k:lower(), v:lower()
                             if lk:find("loji") or lk:find("long_march") or lv:find("loji") or lv:find("long march") then
@@ -189,6 +189,7 @@ local doc = html.html { charset = "utf-8" } {
                             end
                         end
                         io.stderr:write("}\n")
+                        f:close()
                     end
                 end
             },
