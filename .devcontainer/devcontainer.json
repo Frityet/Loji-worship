@@ -1,0 +1,57 @@
+{
+  "name": "Loji Worship Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    }
+  },
+
+  "runArgs": [
+    "--init"
+  ],
+
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y lua5.4 liblua5.4-dev luarocks && sudo update-alternatives --install /usr/bin/lua lua-interpreter /usr/bin/lua5.4 140 --slave /usr/share/man/man1/lua.1.gz lua-manual /usr/share/man/man1/lua5.4.1.gz && sudo update-alternatives --install /usr/bin/luac lua-compiler /usr/bin/luac5.4 140 && npm install",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "sumneko.lua",
+        "ms-vscode.live-server",
+        "formulahendry.auto-rename-tag",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+      }
+    }
+  },
+
+  "forwardPorts": [3000, 8080, 5000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Development Server",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Web Server",
+      "onAutoForward": "notify"
+    },
+    "5000": {
+      "label": "Local Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "remoteUser": "vscode"
+}
