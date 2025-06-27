@@ -1,0 +1,4 @@
+./lua
+./luarocks
+./.luarocks
+./lua_modules

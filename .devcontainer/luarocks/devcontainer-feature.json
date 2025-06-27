@@ -1,0 +1,8 @@
+{
+    "name": "Luarocks",
+    "id": "luarocks",
+    "version": "1.0.0",
+    "installsAfter": [
+        "./openresty"
+    ]
+}

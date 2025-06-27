@@ -1,9 +1,13 @@
 {
-    "runtime.pathStrict": true,
     "workspace.library": [
-        "lua_modules/share/lua/5.4",
-        "lua_modules/lib/lua/5.4"
+        "${addons}/lapis/module/library",
+        "${addons}/openresty/module/library"
     ],
+    "runtime.version": "LuaJIT",
+    "diagnostics.globals": [
+        "ngx"
+    ],
+    "workspace.checkThirdParty": false,
     "diagnostics.groupSeverity": {
         "ambiguity": "Error",
         "await": "Error",
@@ -17,6 +21,6 @@
         "strong": "Error",
         "type-check": "Error",
         "unbalanced": "Error",
-        "unused": "Error"
+        "unused": "Information"
     }
 }

@@ -1,1 +1,8 @@
-node_modules/
+/node_modules/
+/luarocks
+/lua
+/lua_modules/
+/.luarocks/
+/logs/
+/*_temp
+/*.compiled
